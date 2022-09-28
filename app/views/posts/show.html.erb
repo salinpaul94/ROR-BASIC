@@ -15,10 +15,15 @@
 </div>
 
 <div class="container">
-  <%= render 'comments/form', post: @post %>
+  <%= render 'comments/form', 
+  post: @post, 
+  comment: @post.comment.build,
+  submit_label: "Reply" %>
   <br>
   <% @comments.each do |comment| %>
-    <%= render 'comments/comment', post: @post, comment: comment %><br/>
+    <%= render 'comments/comment',
+    post: @post, 
+    comment: comment %><br/>
   <% end %>
 </div>
 
